@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Kyle Christian S. Sarangay - Resume</title>
+ <style>
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
+
+ body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background: linear-gradient(135deg, #000 0%, #121212 100%);
+   color: #ffffff;
+   line-height: 1.6;
+   padding: 2rem;
+ }
+
+ @keyframes fadeIn {
+   0% { opacity: 0; transform: translateY(20px); }
+   100% { opacity: 1; transform: translateY(0); }
+ }
+
+ @keyframes slideUp {
+   0% { opacity: 0; transform: translateY(40px); }
+   100% { opacity: 1; transform: translateY(0); }
+ }
+
+ @keyframes pulse {
+   0%, 100% { transform: scale(1); }
+   50% { transform: scale(1.05); }
+ }
+
+ .container {
+   max-width: 900px;
+   margin: auto;
+   background: #1e1e1e;
+   border: 1px solid #1db954;
+   padding: 2rem;
+   box-shadow: 0 0 20px #1db95488;
+   border-radius: 12px;
+   animation: fadeIn 1s ease-in-out forwards;
+   opacity: 0;
+ }
+
+ header {
+   display: flex;
+   justify-content: space-between;
+   gap: 2rem;
+   margin-bottom: 2rem;
+   flex-wrap: wrap;
+   align-items: center;
+ }
+
+ .profile-pic {
+   width: 120px;
+   height: 120px;
+   border-radius: 50%;
+   overflow: hidden;
+   flex-shrink: 0;
+   border: 3px solid #1db954;
+ }
+
+ .profile-pic img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   animation: pulse 3s infinite ease-in-out;
+   transition: all 0.3s ease;
+ }
+
+ .profile-pic img:hover {
+   box-shadow: 0 0 12px #1db95488;
+   transform: scale(1.05);
+ }
+
+ .profile-info {
+   flex-grow: 1;
+ }
+
+ .profile-info h1 {
+   margin-bottom: 0.5rem;
+   font-size: 1.8rem;
+   color: #1db954;
+ }
+
+ .profile-info address {
+   font-style: normal;
+   font-size: 0.95rem;
+   color: #ccc;
+ }
+
+ .profile-info a,
+ .file-links a {
+   color: #1db954;
+   text-decoration: none;
+   position: relative;
+ }
+
+ .profile-info a::after,
+ .file-links a::after {
+   content: '';
+   position: absolute;
+   bottom: -2px;
+   left: 0;
+   width: 0;
+   height: 2px;
+   background: #1db954;
+   transition: width 0.3s ease;
+ }
+
+ .profile-info a:hover::after,
+ .file-links a:hover::after {
+   width: 100%;
+ }
+
+ .simple-category {
+   min-width: 180px;
+   font-weight: bold;
+   font-size: 1.1rem;
+   color: #1db954;
+   text-align: right;
+ }
+
+ .bio {
+   margin-bottom: 2rem;
+   color: #e0e0e0;
+ }
+
+ .bio img:hover {
+   transform: scale(1.05) rotate(1deg);
+   box-shadow: 0 0 16px #1db95466;
+   transition: all 0.3s ease;
+ }
+
+ .attachments {
+   display: flex;
+   gap: 2rem;
+   flex-wrap: wrap;
+   align-items: flex-start;
+ }
+
+ .media-preview {
+   flex: 1;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-template-rows: repeat(2, auto);
+   gap: 6rem 3rem;
+   justify-items: center;
+   padding-top: 3.5rem;
+ }
+
+ .media-item {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 120px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   opacity: 0;
+   transform: translateY(40px);
+   animation: slideUp 0.8s forwards;
+ }
+
+ .media-item:nth-child(1) { animation-delay: 0.2s; }
+ .media-item:nth-child(2) { animation-delay: 0.4s; }
+ .media-item:nth-child(3) { animation-delay: 0.6s; }
+ .media-item:nth-child(4) { animation-delay: 0.8s; }
+
+ .media-item:hover {
+   transform: scale(1.1) translateY(-4px);
+   box-shadow: 0 8px 15px rgba(29, 185, 84, 0.3);
+ }
+
+ .media-item img {
+   width: 80px;
+   height: 80px;
+   object-fit: contain;
+   background: #2b2b2b;
+   border-radius: 10px;
+   box-shadow: 0 0 8px #1db954aa;
+   margin-bottom: 0.8rem;
+ }
+
+ .media-item span {
+   font-weight: bold;
+   color: #1db954;
+   text-align: center;
+   font-size: 0.9rem;
+ }
+
+ .file-links {
+   flex: 1;
+   min-width: 250px;
+ }
+
+ .file-links h3 {
+   margin-bottom: 1rem;
+   font-size: 1.3rem;
+   color: #1db954;
+   border-bottom: 2px solid #1db954;
+   padding-bottom: 0.3rem;
+ }
+
+ .file-links ul {
+   list-style: none;
+   padding-left: 0;
+ }
+
+ .file-links li {
+   background: #292929;
+   margin-bottom: 1rem;
+   padding: 1rem;
+   border-left: 4px solid #1db954;
+   border-radius: 6px;
+   transition: all 0.3s ease;
+   transform: scale(1);
+ }
+
+ .file-links li:hover {
+   background: #333;
+   transform: scale(1.03);
+   box-shadow: 0 0 10px #1db95433;
+ }
+
+ .file-links small {
+   display: block;
+   color: #aaa;
+   margin-top: 0.3rem;
+ }
+
+ input:focus, textarea:focus, a:focus, button:focus {
+   outline: 2px solid #1db954;
+   outline-offset: 2px;
+   transition: outline 0.2s ease-in-out;
+ }
+
+ .home-button {
+   position: fixed;
+   bottom: 20px;
+   left: 20px;
+   background-color: #1db954;
+   color: #000;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 6px;
+   text-decoration: none;
+   font-weight: bold;
+   box-shadow: 0 0 10px #1db95488;
+   transition: background-color 0.3s ease, transform 0.2s ease;
+   z-index: 999;
+ }
+
+ .home-button:hover {
+   background-color: #17a84a;
+   transform: scale(1.05);
+ }
+ </style>
+</head>
+<body>
+ <a href="index.html" class="home-button">⬅ Back to Home</a>
+
+ <div class="container">
+   <header>
+     <div class="profile-pic">
+       <a href="https://ibb.co/KxVjW8t9" target="_blank" rel="noopener noreferrer">
+         <img src="https://i.ibb.co/CKV5QSjn/kyle.jpg" alt="Kyle Christian S. Sarangay" />
+       </a>
+     </div>
+     <div class="profile-info">
+       <h1>Kyle Christian S. Sarangay</h1>
+       <address>
+         Blk 4 Lot 9 Sunriser<br />
+         Caloocan City<br />
+         Email: <a href="mailto:khaykai@gmail.com">khaykai@gmail.com</a><br />
+         Phone #: 0977 062 3274
+       </address>
+     </div>
+     <div class="simple-category">
+       Web Design<br>Front-End HTML &amp; CSS
+     </div>
+   </header>
+   <main>
+     <section class="bio">
+       <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+         <div style="flex: 1;">
+           <p>
+             I am Kyle, a dedicated UI/UX Designer and Developer with an obsession for creating
+             epic digital experiences. I love crafting user-focused interactions that are both beautiful and
+             functional. Also a First year Cybersecurity student at FEU Institute of Technology, an individual
+             who strives on success with integrity and passion. I enjoy designing intuitive layouts, solving
+             interaction issues, and adding real value to apps through thoughtful, human-centered
+             design.
+           </p>
+         </div>
+         <div style="flex-shrink: 0;">
+           <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif"
+                alt="UI Animation"
+                style="width: 180px; border-radius: 10px; box-shadow: 0 0 10px #1db95488; transition: all 0.3s ease;" />
+         </div>
+       </div>
+     </section>
+     <section class="attachments">
+       <div class="media-preview">
+         <a href="https://open.spotify.com" class="media-item" target="_blank">
+           <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify Logo" />
+           <span>Spotify</span>
+         </a>
+         <a href="https://www.instagram.com" class="media-item" target="_blank">
+           <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo" />
+           <span>Instagram</span>
+         </a>
+         <a href="https://4anime.gg" class="media-item" target="_blank">
+           <img src="https://4anime.gg/images/logo.png" alt="4Anime Logo" />
+           <span>4Anime</span>
+         </a>
+         <a href="https://www.facebook.com" class="media-item" target="_blank">
+           <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" />
+           <span>Facebook</span>
+         </a>
+       </div>
+       <div class="file-links">
+         <h3>Favorite Websites</h3>
+         <ul>
+           <li>
+             <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer">Spotify</a>
+             <small>— Music streaming platform with vast playlists</small>
+           </li>
+           <li>
+             <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+             <small>— Share and discover photos & stories</small>
+           </li>
+           <li>
+             <a href="https://4anime.gg" target="_blank" rel="noopener noreferrer">4Anime</a>
+             <small>— Streaming site for anime enthusiasts</small>
+           </li>
+           <li>
+             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+             <small>— Social networking and messaging platform</small>
+           </li>
+         </ul>
+       </div>
+     </section>
+   </main>
+ </div>
+</body>
+</html>

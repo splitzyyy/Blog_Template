@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sustainable Development Goals</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: url('12.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+    .container {
+      width: 960px;
+      margin: 40px auto;
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+      grid-template-columns: 240px 1fr;
+      gap: 20px;
+      padding: 20px;
+      background-color: rgba(19, 7, 87, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    header, main, aside, footer {
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    header {
+      grid-area: header;
+      background-color: #000000;
+      color: white;
+      text-align: center;
+    }
+
+    aside {
+      grid-area: sidebar;
+      background-color: #d4d0d0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .goal {
+      background-color: #ffffff;
+      padding: 10px;
+      margin: 0px;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      font-weight: bold;
+      text-align: center;
+    }
+
+    main {
+      grid-area: main;
+      background: url('12.jpg') no-repeat center center;
+      background-size: cover;
+      color: rgb(247, 247, 247);
+      position: relative;
+    }
+
+    main:before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+      border-radius: 8px;
+    }
+
+    main h2,
+    main p,
+    main img {
+      position: relative;
+      z-index: 1;
+    }
+
+    main p {
+      line-height: 2.6;
+    }
+
+    main img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    footer {
+      grid-area: footer;
+      background-color: #000000;
+      color: white;
+      text-align: center;
+    }
+
+    .home-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #00bcd4;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      z-index: 999;
+    }
+
+    .home-button:hover {
+      background-color: #0097a7;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: 90%;
+        grid-template-areas:
+          "header"
+          "main"
+          "sidebar"
+          "footer";
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Sustainable Development Goals</h1>
+    </header>
+    <aside>
+      <h2 style="text-align: center;">SDG Goals</h2>
+      <div class="goal">1. No Poverty</div>
+      <div class="goal">2. Zero Hunger</div>
+      <div class="goal">3. Good Health and Well-being</div>
+      <div class="goal">4. Quality Education</div>
+      <div class="goal">5. Gender Equality</div>
+      <div class="goal">6. Clean Water and Sanitation</div>
+      <div class="goal">7. Affordable and Clean Energy</div>
+      <div class="goal">8. Decent Work and Economic Growth</div>
+      <div class="goal">9. Industry, Innovation and Infrastructure</div>
+      <div class="goal">10. Reduced Inequality</div>
+      <div class="goal">11. Sustainable Cities and Communities</div>
+      <div class="goal">12. Responsible Consumption and Production</div>
+      <div class="goal">13. Climate Action</div>
+      <div class="goal">14. Life Below Water</div>
+      <div class="goal">15. Life on Land</div>
+      <div class="goal">16. Peace, Justice and Strong Institutions</div>
+      <div class="goal">17. Partnerships for the Goals</div>
+    </aside>
+    <main>
+      <h2>Welcome to MY SDG Webpage</h2>
+      <p>
+        The Sustainable Development Goals (SDGs) are a shared blueprint developed by the United Nations to foster peace and prosperity for people and the planet. These 17 goals are interconnected and aim to tackle critical global issues including poverty, hunger, health, education, gender equality, climate change, and justice. On this webpage, you'll explore each goal, understand their significance, and discover how we can all contribute through education, action, and innovation to creating a more sustainable future.
+      </p>
+      <img src="1313.jpg" alt="SDG Illustration" />
+    </main>
+    <footer>
+      <p>&copy; 2025 Kyle Sarangay SDG Webpage</p>
+    </footer>
+  </div>
+
+  <a href="index.html" class="home-button">⬅ Back to Home</a>
+</body>
+</html>
